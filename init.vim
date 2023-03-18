@@ -8,7 +8,6 @@ filetype plugin indent on   " allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set spell                   " enable spell check
-set mousem=extend
 set splitright
 set foldlevelstart=99
 set nowrap
@@ -16,6 +15,13 @@ set hlsearch                " Highlight search results
 set incsearch
 set autoread
 set noshowmode
+set clipboard=unnamedplus
+set wildmode=longest,list,full
+set wildmenu
+vnoremap <RightMouse> y
+
+inoremap <Tab> <c-n>
+inoremap <Nul> <c-n>
 
 let g:lightline = {
     \ 'colorscheme' : 'dracula',
@@ -42,9 +48,6 @@ call plug#begin()
  Plug 'scrooloose/nerdtree'
  Plug 'preservim/nerdcommenter'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
- Plug 'lervag/vimtex'
  Plug 'itchyny/lightline.vim'
 call plug#end()
 
-" vimtex settings
-let g:vimtex_compiler_method = 'latexmk'
