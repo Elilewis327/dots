@@ -10,9 +10,32 @@ set mouse=a                 " enable mouse click
 set spell                   " enable spell check
 set mousem=extend
 set splitright
+set foldlevelstart=99
+set nowrap
+set hlsearch                " Highlight search results
+set incsearch
+set autoread
+set noshowmode
+
+let g:lightline = {
+    \ 'colorscheme' : 'dracula',
+    \ 'active' : {
+    \       'left' : [['mode'],['fname'],['readonly','modified']],
+    \       'right' : [['lineinfo'],['filetype']]
+    \   },
+    \ 'component_function' : {
+    \       'fname' : 'OnlyName'
+    \   }
+    \ }
+
+function! OnlyName()
+    return winwidth(0) > 70 ? (expand('%:p')) : ''
+endfunction
+
+" set node path for coc, otherwise breaks
+let g:coc_node_path = "/home/jan/.nvm/versions/node/v18.15.0/bin/node"
 
 " plugins
-
 call plug#begin()
  Plug 'dracula/vim'
  Plug 'ryanoasis/vim-devicons'
@@ -20,8 +43,8 @@ call plug#begin()
  Plug 'preservim/nerdcommenter'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'lervag/vimtex'
+ Plug 'itchyny/lightline.vim'
 call plug#end()
-
 
 " vimtex settings
 let g:vimtex_compiler_method = 'latexmk'
