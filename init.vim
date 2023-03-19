@@ -18,7 +18,9 @@ set noshowmode
 set clipboard=unnamedplus
 set wildmode=longest,list,full
 set wildmenu
-vnoremap <RightMouse> y
+vnoremap <RightMouse> <Nul>
+inoremap <RightMouse> <Nul>
+noremap <RightMouse> <Nul>
 
 inoremap <Tab> <c-n>
 inoremap <Nul> <c-n>
@@ -39,7 +41,7 @@ function! OnlyName()
 endfunction
 
 " set node path for coc, otherwise breaks
-let g:coc_node_path = "/home/jan/.nvm/versions/node/v18.15.0/bin/node"
+"let g:coc_node_path = "/home/jan/.nvm/versions/node/v18.15.0/bin/node"
 
 " plugins
 call plug#begin()
