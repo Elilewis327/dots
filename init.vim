@@ -13,17 +13,23 @@ set foldlevelstart=99
 set nowrap
 set hlsearch                " Highlight search results
 set incsearch
+set ignorecase              " Ignore case when searching
+set showmatch               " Show matching brackets
 set autoread
 set noshowmode
-set clipboard=unnamedplus
+set clipboard=unnamedplus   " yank to system clipboard
+nnoremap d "_d
+vnoremap d "_d
+
 set wildmode=longest,list,full
 set wildmenu
 vnoremap <RightMouse> <Nul>
 inoremap <RightMouse> <Nul>
 noremap <RightMouse> <Nul>
+noremap <d> "1d
 
-inoremap <Tab> <c-n>
-inoremap <Nul> <c-n>
+noremap <Up> <Up>^
+noremap <Down> <Down>^
 
 let g:lightline = {
     \ 'colorscheme' : 'dracula',
@@ -40,8 +46,8 @@ function! OnlyName()
     return winwidth(0) > 70 ? (expand('%:p')) : ''
 endfunction
 
-" set node path for coc, otherwise breaks
-"let g:coc_node_path = "/home/jan/.nvm/versions/node/v18.15.0/bin/node"
+" set node path for coc on ubuntu, otherwise breaks
+let g:coc_node_path = "/home/jan/.nvm/versions/node/v18.15.0/bin/node"
 
 " plugins
 call plug#begin()
@@ -51,5 +57,7 @@ call plug#begin()
  Plug 'preservim/nerdcommenter'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'itchyny/lightline.vim'
+ Plug 'junegunn/fzf'   
 call plug#end()
+
 
