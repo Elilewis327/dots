@@ -58,6 +58,7 @@ call plug#begin()
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'itchyny/lightline.vim'
  Plug 'junegunn/fzf'   
+ Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 
