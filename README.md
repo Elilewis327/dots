@@ -1,3 +1,3 @@
 # dots
 These are my dotfiles for init.vim
-and .zshrc
+config.ini for polybar, and .zshrc
