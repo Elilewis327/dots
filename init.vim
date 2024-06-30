@@ -1,3 +1,4 @@
+set nospell
 set tabstop=4               " number of columns occupied by a tab
 set softtabstop=4           " set spaces as tabs
 set expandtab               " converts tabs to white space
@@ -7,11 +8,11 @@ set number                  " turn on line numbers
 filetype plugin indent on   " allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
-set spell                   " enable spell check
 set splitright
 set foldlevelstart=99
 set nowrap
 set hlsearch                " Highlight search results
+hi Search gui=underline,italic cterm=underline,italic guibg=bg guifg=fg ctermbg=black ctermfg=blue
 set incsearch
 set ignorecase              " Ignore case when searching
 set showmatch               " Show matching brackets
